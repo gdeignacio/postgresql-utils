@@ -1,10 +1,10 @@
---psql -d my_app
+--psql -d emisor
 
-CREATE SCHEMA my_app AUTHORIZATION my_app;
+CREATE SCHEMA emisor AUTHORIZATION emisor;
 
-GRANT USAGE ON SCHEMA my_app to www_my_app;
+GRANT USAGE ON SCHEMA emisor to www_emisor;
 
-ALTER ROLE www_my_app SET search_path=my_app;
+ALTER ROLE www_emisor SET search_path=emisor;
 
 
 

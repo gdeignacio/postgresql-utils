@@ -1,9 +1,9 @@
 -- psql -U postgres
--- Database: my_app
+-- Database: emisor
 
--- DROP DATABASE my_app;
+-- DROP DATABASE emisor;
 
-CREATE DATABASE my_app
+CREATE DATABASE emisor
     WITH OWNER = postgres
     ENCODING = 'UTF8'
     TABLESPACE = pg_default
@@ -11,23 +11,25 @@ CREATE DATABASE my_app
     LC_CTYPE = 'es_ES.UTF-8'
     CONNECTION LIMIT = -1;
 
-ALTER DATABASE my_app SET client_encoding='UTF8';
+ALTER DATABASE emisor SET client_encoding='UTF8';
 
-CREATE ROLE my_app LOGIN
-ENCRYPTED PASSWORD 'my_app'
+CREATE ROLE emisor LOGIN
+ENCRYPTED PASSWORD 'emisor'
 NOSUPERUSER NOINHERIT NOCREATEDB NOCREATEROLE;
 
-CREATE ROLE www_my_app LOGIN
-ENCRYPTED PASSWORD 'www_my_app'
+CREATE ROLE www_emisor LOGIN
+ENCRYPTED PASSWORD 'www_emisor'
 NOSUPERUSER NOINHERIT NOCREATEDB NOCREATEROLE;
 
-CREATE TABLESPACE my_app
-owner my_app
-LOCATION '/app/postgres/data/my_app/mpp';
+CREATE TABLESPACE emisor
+owner emisor
+LOCATION '/app/postgres/databases/emisor/scsp';
 -- Note: review this setting avoids warning
 -- WARNING: tablespace location should not be inside the data directory
 
-ALTER ROLE my_app set default_tablespace=my_app;
+ALTER ROLE emisor set default_tablespace=emisor;
+
+ALTER DATABASE emisor OWNER to emisor;
 
 
 
