@@ -9,5 +9,5 @@ sudo docker run --rm \
     -d -p $DB_PORT:5432 \
     -v $DATA_PATH:/var/lib/postgresql/data \
     -v $TABLESPACE_PATH:/var/lib/postgresql/tablespaces \
-    postgres-$LONG_DB_NAME
+    postgres:$LONG_DB_NAME
 

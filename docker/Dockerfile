@@ -4,6 +4,6 @@ ENV PGTABLESPACES=/var/lib/postgresql/tablespaces
 RUN mkdir -p "$PGTABLESPACES" && chown -R postgres:postgres "$PGTABLESPACES" && chmod 777 "$PGTABLESPACES"
 VOLUME /var/lib/postgresql/tablespaces
 
-COPY ../database/initdb.sh /docker-entrypoint-initdb.d/
+COPY initdb.sh /docker-entrypoint-initdb.d/
 
 
