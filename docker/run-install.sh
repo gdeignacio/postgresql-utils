@@ -6,4 +6,5 @@ sudo apt-get install docker.io
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo systemctl status docker
-sudo docker pull postgres
+#sudo docker pull postgres
+sudo docker build -f Dockerfile -t postgres-$LONG_DB_NAME
