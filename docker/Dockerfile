@@ -6,5 +6,5 @@ VOLUME /var/lib/postgresql/tablespaces
 
 #COPY initdb.sh /docker-entrypoint-initdb.d/
 
-EXPOSE 5432
-CMD [ "postgres" ]
+#EXPOSE 5432
+#CMD [ "postgres" ]
