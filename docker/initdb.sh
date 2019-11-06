@@ -23,7 +23,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
 
     CREATE TABLESPACE $LONG_DB_NAME
     owner $LONG_DB_NAME
-    LOCATION '$TABLESPACE_PATH';
+    LOCATION '$PGTABLESPACES';
    
     ALTER ROLE $LONG_DB_NAME set default_tablespace=$LONG_DB_NAME;
 
