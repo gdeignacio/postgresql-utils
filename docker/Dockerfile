@@ -1,8 +1,14 @@
 FROM postgres
 
-RUN mkdir -p /var/lib/postgresql/tablespaces; \
-    chown -R postgres:postgres /var/lib/postgresql/tablespaces; \
-    chmod 777 /var/lib/postgresql/tablespaces
+ENV PGTABLESPACES /var/lib/postgresql/tablespaces
+
+USER postgres
+
+RUN mkdir -p /var/lib/postgresql/tablespaces
+
+USER root
+
+RUN chmod 777 /var/lib/postgresql/tablespaces
 
 VOLUME /var/lib/postgresql/tablespaces
 
