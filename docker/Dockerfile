@@ -4,7 +4,7 @@ ENV PGTABLESPACES /app/postgresql/tablespaces
 
 RUN mkdir -p /app/postgresql/tablespaces; \
     chown -R postgres:postgres /app/postgresql/tablespaces; \
-    chmod 777 /var/lib/postgresql/tablespaces
+    chmod 777 /app/postgresql/tablespaces
 
 VOLUME /app/postgresql/tablespaces
 
