@@ -8,6 +8,6 @@ sudo docker run --rm \
     -e LONG_DB_NAME=$LONG_DB_NAME \
     -d -p $DB_PORT:5432 \
     -v $DATA_PATH:/var/lib/postgresql/data \
-    -v $TABLESPACE_PATH:/var/lib/postgresql/tablespaces \
+    -v $TABLESPACE_PATH:$PG_TABLESPACES \
     postgres:$LONG_DB_NAME
 
