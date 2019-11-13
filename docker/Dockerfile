@@ -3,7 +3,6 @@ FROM postgres
 ENV PGTABLESPACES /app/postgresql/tablespaces
 
 RUN mkdir -p /app/postgresql/tablespaces &&
-    echo "gdeignacio@gmail.com" > /app/postgresql/tablespaces/README.txt
     chown -R postgres:postgres /app/postgresql/tablespaces &&
     chmod 777 /app/postgresql/tablespaces
 

@@ -2,6 +2,7 @@
 
 sudo mkdir -p $DATA_PATH
 sudo mkdir -p $TABLESPACE_PATH
+sudo chown -R postgres:postgres $TABLESPACE_PATH
 sudo docker run --rm \
     --name pg-docker-$LONG_DB_NAME \
     -e POSTGRES_PASSWORD=$PG_PASSWORD \
