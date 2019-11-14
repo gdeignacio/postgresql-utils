@@ -1,4 +1,4 @@
-FROM postgres
+FROM postgres:12-alpine
 
 ENV PGTABLESPACES /app/postgresql/tablespaces
 
