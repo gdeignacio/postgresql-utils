@@ -24,3 +24,18 @@ cd /app/postgres/databases
 mkdir scsp_emisor
 cd scsp_emisor
 mkdir emisor
+
+cd /app/postgres/databases
+mkdir scsp_admin
+cd scsp_admin
+mkdir admin
+
+cd /app/postgres/databases
+mkdir scsp_requirente
+cd scsp_requirente
+mkdir requirente
+
+cd /app/postgres/databases
+mkdir scsp_cliente
+cd scsp_cliente
+mkdir cliente
