@@ -3,11 +3,11 @@
 sudo mkdir -p $DATA_PATH
 sudo mkdir -p $TABLESPACE_PATH
 sudo docker run --rm \
-    --name pg-docker-$LONG_DB_NAME \
+    --name pg-docker-$LONG_APP_NAME \
     -e POSTGRES_PASSWORD=$PG_PASSWORD \
-    -e LONG_DB_NAME=$LONG_DB_NAME \
+    -e LONG_APP_NAME=$LONG_APP_NAME \
     -d -p $DB_PORT:5432 \
     -v $DATA_PATH:/var/lib/postgresql/data \
-    -v $TABLESPACE_PATH:$PGTABLESPACES \
-    postgres:$LONG_DB_NAME
+    -v $TABLESPACE_PATH:$PG_VOLUME_PATH \
+    postgres:$LONG_APP_NAME
 

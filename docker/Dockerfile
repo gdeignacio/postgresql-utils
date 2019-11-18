@@ -1,12 +1,12 @@
 FROM postgres:12-alpine
 
-ENV PGTABLESPACES /app/postgresql/tablespaces
+ENV  PG_VOLUME_PATH /app/postgresql
 
-RUN mkdir -p /app/postgresql/tablespaces && \
-    chown -R postgres:postgres /app/postgresql/tablespaces && \
-    chmod 777 /app/postgresql/tablespaces
+RUN mkdir -p /app/postgresql && \
+    chown -R postgres:postgres /app/postgresql && \
+    chmod 777 /app/postgresql
 
-VOLUME /app/postgresql/tablespaces
+VOLUME /app/postgresql
 
 #COPY initdb.sh /docker-entrypoint-initdb.d/
 
