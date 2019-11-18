@@ -1,10 +1,10 @@
-FROM postgres:12-alpine
+FROM postgres
 
 ENV  PG_VOLUME_PATH /app/postgresql
 
-RUN mkdir -p /app/postgresql && \
+RUN mkdir -p /app/postgresql/tablespaces && \
     chown -R postgres:postgres /app/postgresql && \
-    chmod 777 /app/postgresql
+    chmod -R 777 /app/postgresql
 
 VOLUME /app/postgresql
 

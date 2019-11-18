@@ -7,3 +7,6 @@ sudo apt-get install docker.io docker-compose
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo systemctl status docker
+sudo useradd -p $(openssl passwd -1 docker) docker
+sudo mkdir -p /app/docker
+sudo chown docker:docker /app/docker
