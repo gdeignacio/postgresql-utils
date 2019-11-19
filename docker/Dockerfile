@@ -8,6 +8,8 @@ USER postgres
 RUN mkdir "$PGTABLESPACES" 
 #&& chown -R postgres:postgres "$PGTABLESPACES" && chmod 777 "$PGTABLESPACES"
 
+USER root
+
 VOLUME /var/lib/postgresql/tablespaces
 
 #COPY initdb.sh /docker-entrypoint-initdb.d/
