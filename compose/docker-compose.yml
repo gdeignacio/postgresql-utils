@@ -2,15 +2,15 @@ version: "3"
 
 services:
   db:
-    image: postgresql:12-alpine
+    image: postgresql:12
     ports:
       -"5432:5432"
     environment:
       - POSTGRES_PASSWORD:$PG_PASSWORD
-      - LONG_DB_NAME:$LONG_DB_NAME
+      - LONG_APP_NAME:$LONG_APP_NAME
     volumes:
       - data:/var/lib/postgresql/data
-      - tablespace:/app/postgres/tablespaces
+      - tablespace:/var/lib/postgresql/tablespaces
 volumes:
     data:$DATA_PATH
     tablespace:$TABLESPACE_PATH

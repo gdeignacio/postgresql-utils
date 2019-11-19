@@ -1,12 +1,10 @@
 FROM postgres
 
-ENV  PGTABLESPACES /app/postgresql/tablespaces
+ENV  PGTABLESPACES /var/lib/postgresql/tablespaces
 
-RUN mkdir -p "$PGTABLESPACES" && \
-    chown -R postgres:postgres "$PGTABLESPACES" && \
-    chmod -R 777 "$PGTABLESPACES"
-
-VOLUME "$PGTABLESPACES"
+# this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
+RUN mkdir -p "$PGTABLESPACES" && chown -R postgres:postgres "$PGTABLESPACES" && chmod 777 "$PGTABLESPACES"
+VOLUME /var/lib/postgresql/tablespaces
 
 #COPY initdb.sh /docker-entrypoint-initdb.d/
 
