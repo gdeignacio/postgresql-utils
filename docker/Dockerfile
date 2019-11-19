@@ -9,7 +9,9 @@ FROM postgres
 
 #COPY initdb.sh /docker-entrypoint-initdb.d/
 
-COPY file-settings-entrypoint.sh /usr/local/bin
+COPY ./file-settings-entrypoint.sh /docker-entrypoint-initdb.d/
 
-RUN ln -s usr/local/bin/file-settings-entrypoint.sh / # backwards compat
-CMD ["file-settings-entrypoint.sh"]
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+EXPOSE 5432
+CMD ["postgres"]
