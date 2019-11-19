@@ -6,4 +6,4 @@ export DB_PORT=5432
 export PG_PASSWORD=custom
 export DATA_PATH=/app/docker/postgresql/$LONG_APP_NAME/data
 export TABLESPACE_PATH=$DATA_PATH/tablespaces
-#export PGTABLESPACES=/var/lib/postgresql/tablespaces
+export PGTABLESPACES=/var/lib/postgresql/data/tablespaces
