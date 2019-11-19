@@ -1,4 +1,4 @@
-FROM postgres
+FROM postgres:9.5
 
 ENV  PGTABLESPACES $PGDATA/tablespaces
 
