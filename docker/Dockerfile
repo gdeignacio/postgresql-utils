@@ -12,4 +12,4 @@ FROM postgres
 COPY file-settings-entrypoint.sh /usr/local/bin
 
 RUN ln -s usr/local/bin/file-settings-entrypoint.sh / # backwards compat
-ENTRYPOINT ["file-settings-entrypoint.sh"]
+CMD ["file-settings-entrypoint.sh"]
