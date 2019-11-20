@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo mkdir -p $DATA_PATH
+source ./scripts/setenv.sh
+
 sudo docker run --rm \
     --name pg-docker-$LONG_APP_NAME \
     -e POSTGRES_PASSWORD=$PG_PASSWORD \
@@ -8,4 +9,3 @@ sudo docker run --rm \
     -d -p $DB_PORT:5432 \
     -v $DATA_PATH:/var/lib/postgresql/data \
     postgres:$LONG_APP_NAME
-
