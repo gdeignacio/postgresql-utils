@@ -4,10 +4,11 @@ source ./setenv.sh
 sudo docker stop pg-docker-$LONG_APP_NAME
 sudo rm -r /app/docker/postgresql/$LONG_APP_NAME
 
-
-sudo rm -r $HOME/postgresql-utils
+mkdir -p $HOME/.docker-utils
+cd $HOME/.dockerutils
+sudo rm -r $HOME/.dockerutils/postgresql-utils
 git clone https://github.com/gdeignacio/postgresql-utils.git
-cd postgresql-utils/docker
+cd $HOME/.dockerutils/postgresql-utils/scripts
 sudo chmod +x *
 #source ./setenv.sh
 ./run-build.sh
