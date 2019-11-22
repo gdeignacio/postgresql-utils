@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#docker exec -i -t [CONTAINER_NAME] /bin/bash
+
 sudo docker run --rm \
     --name pg-docker-$LONG_APP_NAME \
     -e POSTGRES_PASSWORD=$PG_PASSWORD \
