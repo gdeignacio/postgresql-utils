@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#sudo mkdir -p $DATA_PATH
 sudo docker run --rm \
     --name pg-docker-$LONG_APP_NAME \
     -e POSTGRES_PASSWORD=$PG_PASSWORD \
