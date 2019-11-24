@@ -17,7 +17,7 @@
 # Pull base image
 # ---------------
 
-FROM postgres:9.5
+FROM postgres:9.5-alpine
 
 # Maintainer
 # ----------
