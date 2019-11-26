@@ -17,7 +17,7 @@
 # Pull base image
 # ---------------
 
-FROM postgres:9.5
+FROM postgres:10.2-alpine
 
 # Maintainer
 # ----------
@@ -29,11 +29,11 @@ MAINTAINER Guillermo De Ignacio <gdeignacio@gmail.com>
 
 ENV  PGTABLESPACES $PGDATA/tablespaces
 
-# Copy files needed during both installation and runtime
+# Copy files needed during database creation
 # -------------
 
 COPY ./00_initdb.sh /docker-entrypoint-initdb.d/
-#COPY ./initdb.d/ /docker-entrypoint-initdb.d/initdb.d/
+
 # Define default entrypoint 
 
 ENTRYPOINT ["docker-entrypoint.sh"]

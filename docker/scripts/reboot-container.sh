@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# WARNING
-# All your data will be LOST
-# Run this script only for development
-# or first go into production
+# This script stops the container
+# and creates a new one
+# Database should persist
 
 echo ""
-echo respawn.sh started
+echo reboot-container.sh started
 echo ""
 
 source ./setenv.sh
@@ -19,9 +18,6 @@ echo DATA_PATH $DATA_PATH
 echo TABLESPACE_PATH $TABLESPACE_PATH
 echo PGTABLESPACES $PGTABLESPACES
 
-# Don't optimize with $DATA_PATH
-# Could be empty and all data will be lost
-sudo rm -r /app/docker/postgresql/$LONG_APP_NAME
 mkdir -p $HOME/.docker-utils
 cd $HOME/.docker-utils
 echo Current dir should be $HOME/.docker-utils
@@ -34,16 +30,13 @@ ls -l
 git clone https://github.com/gdeignacio/postgresql-utils.git
 echo Cloning from git
 cd $HOME/.docker-utils/postgresql-utils/docker/src
-#sudo chmod +x ./initdb.sh
-#sudo chmod +x ./initdb.d/*.sh
+
 echo Building images at `pwd`
 sudo docker build -t "postgres:$LONG_APP_NAME" .
 #cd $HOME/.docker-utils/postgresql-utils/docker/src
 echo Scripts folder `pwd`
 sudo chmod +x *
 
-echo Creating $DATA_PATH folder
-sudo mkdir -p $DATA_PATH
 ls -l $DATA_PATH/..
 sudo docker stop pg-docker-$LONG_APP_NAME
 ../scripts/run-container.sh
