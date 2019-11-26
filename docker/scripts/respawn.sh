@@ -34,11 +34,10 @@ ls -l
 git clone https://github.com/gdeignacio/postgresql-utils.git
 echo Cloning from git
 cd $HOME/.docker-utils/postgresql-utils/docker/src
-#sudo chmod +x ./initdb.sh
-#sudo chmod +x ./initdb.d/*.sh
+
 echo Building images at `pwd`
 sudo docker build -t "postgres:$LONG_APP_NAME" .
-#cd $HOME/.docker-utils/postgresql-utils/docker/src
+
 echo Scripts folder `pwd`
 sudo chmod +x *
 

@@ -18,7 +18,6 @@ echo DATA_PATH $DATA_PATH
 echo TABLESPACE_PATH $TABLESPACE_PATH
 echo PGTABLESPACES $PGTABLESPACES
 
-
 mkdir -p $HOME/.docker-utils
 cd $HOME/.docker-utils
 echo Current dir should be $HOME/.docker-utils
@@ -31,11 +30,10 @@ ls -l
 git clone https://github.com/gdeignacio/postgresql-utils.git
 echo Cloning from git
 cd $HOME/.docker-utils/postgresql-utils/docker/src
-#sudo chmod +x ./initdb.sh
-#sudo chmod +x ./initdb.d/*.sh
+
 echo Building images at `pwd`
 sudo docker build -t "postgres:$LONG_APP_NAME" .
-#cd $HOME/.docker-utils/postgresql-utils/docker/src
+
 echo Scripts folder `pwd`
 sudo chmod +x *
 
