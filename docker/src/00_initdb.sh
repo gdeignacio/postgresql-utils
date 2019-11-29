@@ -2,7 +2,7 @@
 
 #export INIT_CURDIR=`pwd`
 
-
+touch ./extintor.txt
 
 #cd /docker-entrypoint-initdb.d
 
