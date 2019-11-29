@@ -7,3 +7,4 @@ export PG_PASSWORD=portafib
 export DATA_PATH=/app/docker/postgresql/$LONG_APP_NAME/data
 export TABLESPACE_PATH=$DATA_PATH/tablespaces
 export PGTABLESPACES=/var/lib/postgresql/data/tablespaces
+export GIT_URL=https://github.com/gdeignacio/postgresql-utils.git

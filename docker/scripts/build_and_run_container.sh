@@ -18,6 +18,7 @@ echo PG_PASSWORD $PG_PASSWORD
 echo DATA_PATH $DATA_PATH
 echo TABLESPACE_PATH $TABLESPACE_PATH
 echo PGTABLESPACES $PGTABLESPACES
+echo GIT_URL $GIT_URL
 
 # Don't optimize with $DATA_PATH
 # Could be empty and all data will be lost
@@ -31,7 +32,7 @@ ls -l
 echo Removing postgresql-utils from `pwd`
 sudo rm -r $HOME/.docker-utils/postgresql-utils
 ls -l
-git clone https://github.com/gdeignacio/postgresql-utils.git
+git clone $GIT_URL
 echo Cloning from git
 cd $HOME/.docker-utils/postgresql-utils/docker/src
 
