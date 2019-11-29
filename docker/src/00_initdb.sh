@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#export INIT_CURDIR=`pwd`
+export INIT_CURDIR=`pwd`
 
-touch ./extintor.txt
+echo $INIT_CURDIR > $PGDATA/extintor.txt
 
 #cd /docker-entrypoint-initdb.d
 
