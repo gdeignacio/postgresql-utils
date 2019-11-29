@@ -1,7 +1,9 @@
 #!/bin/bash
 
-
-
+source ./initdb.d/00-setenv.sh
+source ./initdb.d/11-create-tablespace-folder.sh
+source ./initdb.d/21-create-database.sh
+source ./initdb.d/22-create-schema.sh
 
 
 # export APP_DATABASE_NAME=$LONG_APP_NAME
