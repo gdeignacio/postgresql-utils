@@ -2,12 +2,14 @@
 
 export INIT_CURDIR=`pwd`
 
+echo $CURDIR > donde.txt
+
 cd /docker-entrypoint-initdb.d
 
-source ./initdb.d/00-setenv.sh
-source ./initdb.d/11-create-tablespace-folder.sh
-source ./initdb.d/21-create-database.sh
-source ./initdb.d/22-create-schema.sh
+#source ./initdb.d/00-setenv.sh
+#source ./initdb.d/11-create-tablespace-folder.sh
+#source ./initdb.d/21-create-database.sh
+#source ./initdb.d/22-create-schema.sh
 
 cd $INIT_CURDIR
 
