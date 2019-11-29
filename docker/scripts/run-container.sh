@@ -24,3 +24,4 @@ sudo docker run --rm \
     -v $DATA_PATH:/var/lib/postgresql/data \
     postgres:$LONG_APP_NAME
 
+echo pg-docker-$LONG_APP_NAME succesfully created
