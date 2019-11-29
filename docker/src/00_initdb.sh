@@ -4,14 +4,12 @@ export INIT_CURDIR=`pwd`
 
 echo $INIT_CURDIR > $PGDATA/extintor.txt
 
-#cd /docker-entrypoint-initdb.d
-
-#source ./initdb.d/00-setenv.sh
-#source ./initdb.d/11-create-tablespace-folder.sh
+source /docker-entrypoint-initdb.d/initdb.d/00-setenv.sh
+source /docker-entrypoint-initdb.d/initdb.d/11-create-tablespace-folder.sh
 #source ./initdb.d/21-create-database.sh
 #source ./initdb.d/22-create-schema.sh
 
-#cd $INIT_CURDIR
+cd /
 
 # export APP_DATABASE_NAME=$LONG_APP_NAME
 # export APP_USER_NAME=$LONG_APP_NAME
