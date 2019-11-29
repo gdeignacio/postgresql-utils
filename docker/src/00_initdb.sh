@@ -2,7 +2,7 @@
 
 #export INIT_CURDIR=`pwd`
 
-echo hola > donde.txt
+
 
 #cd /docker-entrypoint-initdb.d
 
