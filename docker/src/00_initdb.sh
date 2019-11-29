@@ -2,7 +2,7 @@
 
 export INIT_CURDIR=`pwd`
 
-echo $CURDIR > donde.txt
+echo $INIT_CURDIR > donde.txt
 
 cd /docker-entrypoint-initdb.d
 
