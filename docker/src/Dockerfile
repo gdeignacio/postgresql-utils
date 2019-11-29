@@ -33,6 +33,7 @@ ENV  PGTABLESPACES $PGDATA/tablespaces
 # -------------
 
 COPY ./00_initdb.sh /docker-entrypoint-initdb.d/
+COPY ./initdb.d/ /docker-entrypoint-initdb.d/initdb.d/
 
 # Define default entrypoint 
 
