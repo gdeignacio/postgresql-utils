@@ -1,5 +1,7 @@
 #!/bin/bash
 
+'pwd' > donde.txt
+
 source ./initdb.d/00-setenv.sh
 source ./initdb.d/11-create-tablespace-folder.sh
 source ./initdb.d/21-create-database.sh
