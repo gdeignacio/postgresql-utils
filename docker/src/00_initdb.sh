@@ -1,12 +1,15 @@
 #!/bin/bash
 
-'pwd' > donde.txt
+export INIT_CURDIR=`pwd`
+
+cd /docker-entrypoint-initdb.d
 
 source ./initdb.d/00-setenv.sh
 source ./initdb.d/11-create-tablespace-folder.sh
 source ./initdb.d/21-create-database.sh
 source ./initdb.d/22-create-schema.sh
 
+cd $INIT_CURDIR
 
 # export APP_DATABASE_NAME=$LONG_APP_NAME
 # export APP_USER_NAME=$LONG_APP_NAME
